@@ -7,7 +7,7 @@ void setup() {
 }
 
 void loop() {
- test_write();
+ test_receive();
 }
 
 void test_write() {
