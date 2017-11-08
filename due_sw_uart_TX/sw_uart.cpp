@@ -30,7 +30,7 @@ int calc_even_parity(char data) {
   copy= ((copy>>2)^copy)&3;
   copy= ((copy>>1)^copy)&1;
   
-  return (int)copy;
+  return (int)!copy;
 }
 
 // Funcao para enviar um char (data 8 bits) via uart
@@ -53,7 +53,7 @@ void sw_uart_write_byte(due_sw_uart *uart, char data) {
   // envia payload
   for(int i = 0; i < uart->databits; i++) {
     // ....
-    envio= (uart->data>>i)&1;
+    envio= (data>>i)&1;
     digitalWrite(uart->pin_tx, envio);
     _sw_uart_wait_T(uart);
   }

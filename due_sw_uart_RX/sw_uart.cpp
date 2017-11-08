@@ -28,7 +28,7 @@ int calc_even_parity(char data) {
   copy= ((copy>>2)^copy)&3;
   copy= ((copy>>1)^copy)&1;
   
-  return (int)copy;
+  return (int)!copy;
 }
 
 // recebimento de dados da serial
@@ -64,7 +64,7 @@ int sw_uart_receive_byte(due_sw_uart *uart, char* data) {
     nchar = digitalRead(uart->pin_rx)<<i;
     _sw_uart_wait_T();
   }
-  
+
   // recebe paridade
   rx_parity = digitalRead(uart->pin_rx);
   _sw_uart_wait_T();
