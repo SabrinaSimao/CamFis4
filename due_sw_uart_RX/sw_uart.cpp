@@ -60,18 +60,18 @@ int sw_uart_receive_byte(due_sw_uart *uart, char* data) {
   }
 
   // recebe dados
-  for (int i = 0, i < uart->databits, i++){
+  for (int i = 0; i < uart->databits; i++){
     nchar = digitalRead(uart->pin_rx)<<i;
-    _sw_uart_wait_T();
+    _sw_uart_wait_T(uart);
   }
 
   // recebe paridade
   rx_parity = digitalRead(uart->pin_rx);
-  _sw_uart_wait_T();
+  _sw_uart_wait_T(uart);
 
   // recebe stop bit
   char stop = digitalRead(uart->pin_rx);
-  _sw_uart_wait_T();
+  _sw_uart_wait_T(uart);
 
   // checa paridade
   parity = (char)calc_even_parity(nchar); //medo dessa conversao
