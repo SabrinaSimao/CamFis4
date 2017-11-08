@@ -15,6 +15,3 @@ void test_write() {
   delay(50);
 }
 
-void test_receive() {
-}
-
