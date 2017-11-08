@@ -38,7 +38,7 @@ int sw_uart_receive_byte(due_sw_uart *uart, char* data) {
   char nchar  = 0;
   
   // variavel para calculo da paridade
-  char parity, rx_parity;
+  int parity, rx_parity; //mudamos para int!!
   
   // aguarda start bit
   bool check = false;
@@ -51,7 +51,7 @@ int sw_uart_receive_byte(due_sw_uart *uart, char* data) {
     // Confirma start BIT
     if(start == 0){
       start2 = digitalRead(uart->pin_rx);
-      _sw_uart_wait_half_T(uart);
+      _sw_uart_wait_T(uart);
       // checa se bit ainda é 0
       if(start2 == 0){
         check = !check;
@@ -74,7 +74,11 @@ int sw_uart_receive_byte(due_sw_uart *uart, char* data) {
   _sw_uart_wait_T(uart);
 
   // checa paridade
-  parity = (char)calc_even_parity(nchar); //medo dessa conversao
+  parity = calc_even_parity(nchar); //medo dessa conversao
+  Serial.println("Parity:");
+  Serial.println(parity);
+  Serial.println("ParityRX:");
+  Serial.println(rx_parity);
   if(parity != rx_parity) {
     return SW_UART_ERROR_PARITY;
   }
