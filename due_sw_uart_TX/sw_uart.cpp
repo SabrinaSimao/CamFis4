@@ -53,7 +53,7 @@ void sw_uart_write_byte(due_sw_uart *uart, char data) {
   // envia payload
   for(int i = 0; i < uart->databits; i++) {
     // ....
-    envio= (uart->databits>>i)&1;
+    envio= (uart->data>>i)&1;
     digitalWrite(uart->pin_tx, envio);
     _sw_uart_wait_T(uart);
   }
@@ -68,7 +68,7 @@ void sw_uart_write_byte(due_sw_uart *uart, char data) {
   // envia stop bit, se existir
   
   for(int i = 0; i < uart->stopbits; i++) {
-    envio= (uart->stopbits>>i)&1;
+    envio= (uart->stopbits>>i)&1; //arrumar depois
     digitalWrite(uart->pin_tx, envio);
     _sw_uart_wait_T(uart);
   } 
