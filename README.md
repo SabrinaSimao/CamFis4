@@ -5,5 +5,5 @@ Projeto 4 de Camada Física da Computação
 
 <a href="url"><img src="Imagens/print.png" height="400"></a>
 <a href="url"><img src="Imagens/print2.png" height="400"></a>
-<a href="url"><img src="Imagens/analog.png" height="400"></a>
-<a href="url"><img src="Imagens/curva.png" height="400"></a>
+<a href="url"><img src="Imagens/analog.png" lenght="400"></a>
+<a href="url"><img src="Imagens/curva.png" lenght="400"></a>
