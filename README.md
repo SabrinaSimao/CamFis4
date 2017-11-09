@@ -17,7 +17,7 @@ Projeto 4 de Camada Física da Computação
 
 <a href="url"><img src="Imagens/analog.png" lenght="400"></a>
 
-### Sinais podem ser 0 ou 1. No período transitório de sinais, há uma curva o Analog constrói para representar tal transição.
+### Sinais podem ser 0 ou 1. No período transitório de sinais, há uma curva que o Analog constrói para representar tal transição.
 
 <a href="url"><img src="Imagens/curva.png" lenght="400"></a>
 
